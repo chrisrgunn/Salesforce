@@ -1,0 +1,12 @@
+                     List of relations
+   Schema   |         Name         | Type  |     Owner      
+------------+----------------------+-------+----------------
+ salesforce | _hcmeta              | table | mfykicvwpdzyrw
+ salesforce | _sf_event_log        | table | mfykicvwpdzyrw
+ salesforce | _trigger_last_id     | table | mfykicvwpdzyrw
+ salesforce | _trigger_log         | table | mfykicvwpdzyrw
+ salesforce | _trigger_log_archive | table | mfykicvwpdzyrw
+ salesforce | account              | table | mfykicvwpdzyrw
+ salesforce | contact              | table | mfykicvwpdzyrw
+(7 rows)
+
