@@ -23,7 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: postgresql-graceful-13317
+  database: mylocaldb
+  schema_search_path: "salesforce,public"
+  #database: postgresql-graceful-13317
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +60,7 @@ development:
 test:
   <<: *default
   database: postgresql-graceful-13317
+  schema_search_path: "salesforce,public"
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,3 +86,4 @@ production:
   database: postgresql-graceful-13317
   username: mfykicvwpdzyrw
   password: <%= ENV['dGFXqd4KmcLwQQG036vBDCVlxX'] %>
+  schema_search_path: "salesforce,public"

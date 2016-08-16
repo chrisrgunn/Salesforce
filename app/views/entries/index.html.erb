@@ -2,22 +2,45 @@
 table {
     border-collapse: separate;
     border-spacing: 15px 10px;
+  }
+
+  p.big{
+    font-weight:bold;
+    font-size:16px;
 }
+
 </style>
 
 <p id="notice"><%= notice %></p>
 
 <h1>Data Entries</h1>
 
+
+<h3>Existing Contacts</h3>
+<p>
+  <% if @contacts.blank? %>
+    <p> There are no contacts in the system </p>
+  <% else %>
+    <ul id="contacts"> <% @contacts.each do |c| %>
+        <li>
+          <%= c.firstname -%>
+      </li>
+  <% end %>
+</ul>  <% end %>
+</p>
+
+
+
+
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>ID</th>
-      <th>SFID </th>
-      <th>Last change</th>
-      <th>Modified at</th>
-      <th>Message</th>
+      <th><p class='big'>Name</p></th>
+      <th><p class='big'>ID</p></th>
+      <th><p class='big'>SFID </p></th>
+      <th><p class='big'>Last change</p></th>
+      <th><p class='big'>Modified At</p></th>
+      <th><p class='big'>Message</p></th>
       <th colspan="3"></th>
     </tr>
   </thead>

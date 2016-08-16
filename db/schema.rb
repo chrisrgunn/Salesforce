@@ -11,10 +11,136 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816074659) do
+ActiveRecord::Schema.define(version: 20160816202610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "_hcmeta", force: :cascade do |t|
+    t.text    "details"
+    t.string  "org_id",  limit: 50
+    t.integer "hcver"
+  end
+
+  create_table "_sf_event_log", force: :cascade do |t|
+    t.string   "table_name",   limit: 128
+    t.string   "action",       limit: 7
+    t.datetime "synced_at",                default: "now()"
+    t.datetime "sf_timestamp"
+    t.string   "sfid",         limit: 20
+    t.text     "record"
+    t.boolean  "processed"
+  end
+
+  add_index "_sf_event_log", ["sfid"], name: "idx__sf_event_log_sfid", using: :btree
+  add_index "_sf_event_log", ["table_name", "synced_at"], name: "idx__sf_event_log_comp_key", using: :btree
+
+  create_table "_trigger_last_id", id: false, force: :cascade do |t|
+    t.integer "trigger_log_id"
+  end
+
+  create_table "_trigger_log", force: :cascade do |t|
+    t.integer  "processed_tx", limit: 8
+    t.text     "values"
+    t.string   "sfid",         limit: 18
+    t.integer  "txid",         limit: 8
+    t.text     "sf_message"
+    t.integer  "record_id"
+    t.string   "table_name",   limit: 128
+    t.datetime "created_at",               default: "now()"
+    t.datetime "processed_at"
+    t.text     "old"
+    t.integer  "sf_result"
+    t.string   "action",       limit: 7
+    t.datetime "updated_at",               default: "now()"
+    t.string   "state",        limit: 8
+  end
+
+  add_index "_trigger_log", ["created_at"], name: "_trigger_log_idx_created_at", using: :btree
+  add_index "_trigger_log", ["state", "id"], name: "_trigger_log_idx_state_id", using: :btree
+  add_index "_trigger_log", ["state", "table_name"], name: "_trigger_log_idx_state_table_name", where: "(((state)::text = 'NEW'::text) OR ((state)::text = 'PENDING'::text))", using: :btree
+
+  create_table "_trigger_log_archive", force: :cascade do |t|
+    t.integer  "processed_tx", limit: 8
+    t.text     "values"
+    t.string   "sfid",         limit: 18
+    t.integer  "txid",         limit: 8
+    t.text     "sf_message"
+    t.integer  "record_id"
+    t.string   "table_name",   limit: 128
+    t.datetime "created_at"
+    t.datetime "processed_at"
+    t.text     "old"
+    t.integer  "sf_result"
+    t.string   "action",       limit: 7
+    t.datetime "updated_at"
+    t.string   "state",        limit: 8
+  end
+
+  add_index "_trigger_log_archive", ["created_at"], name: "_trigger_log_archive_idx_created_at", using: :btree
+  add_index "_trigger_log_archive", ["record_id"], name: "_trigger_log_archive_idx_record_id", using: :btree
+  add_index "_trigger_log_archive", ["state", "table_name"], name: "_trigger_log_archive_idx_state_table_name", where: "((state)::text = 'FAILED'::text)", using: :btree
+
+  create_table "account", force: :cascade do |t|
+    t.string   "accountteam__c",          limit: 255
+    t.string   "_hc_lastop",              limit: 32
+    t.text     "_hc_err"
+    t.string   "account_md_d__c",         limit: 18
+    t.string   "account_md_d_title__c",   limit: 1300
+    t.string   "phone",                   limit: 40
+    t.boolean  "isdeleted"
+    t.string   "account_md_d_email__c",   limit: 1300
+    t.string   "account_md_d_name__c",    limit: 1300
+    t.float    "annualrevenue"
+    t.string   "recordtypeid",            limit: 18
+    t.date     "assets_reported_date__c"
+    t.string   "accountmanager__c",       limit: 25
+    t.string   "name",                    limit: 255
+    t.string   "account_manager__c",      limit: 18
+    t.datetime "systemmodstamp"
+    t.string   "account_md_d_phone__c",   limit: 1300
+    t.string   "accountsitetype__c",      limit: 255
+    t.string   "accountsource",           limit: 40
+    t.datetime "createddate"
+    t.string   "website",                 limit: 255
+    t.string   "sfid",                    limit: 18
+  end
+
+  add_index "account", ["sfid"], name: "hcu_idx_account_sfid", unique: true, using: :btree
+  add_index "account", ["systemmodstamp"], name: "hc_idx_account_systemmodstamp", using: :btree
+
+  create_table "contact", force: :cascade do |t|
+    t.string   "_hc_lastop",                       limit: 32
+    t.string   "sfid",                             limit: 18
+    t.datetime "createddate"
+    t.boolean  "isdeleted"
+    t.string   "name",                             limit: 121
+    t.datetime "systemmodstamp"
+    t.text     "_hc_err"
+    t.string   "accountid",                        limit: 18
+    t.string   "email",                            limit: 80
+    t.string   "firstname",                        limit: 40
+    t.string   "acct_global_account_executive__c", limit: 1300
+    t.string   "lastnamelocal",                    limit: 80
+    t.string   "firstnamelocal",                   limit: 40
+    t.string   "phone",                            limit: 40
+    t.string   "function__c",                      limit: 255
+    t.string   "account_record_type__c",           limit: 1300
+    t.string   "level__c",                         limit: 255
+    t.string   "lastname",                         limit: 80
+    t.string   "primary_functional_role__c",       limit: 255
+    t.string   "account_name_local__c",            limit: 18
+    t.string   "homephone",                        limit: 40
+  end
+
+  add_index "contact", ["sfid"], name: "hcu_idx_contact_sfid", unique: true, using: :btree
+  add_index "contact", ["systemmodstamp"], name: "hc_idx_contact_systemmodstamp", using: :btree
+
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "entries", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +162,11 @@ ActiveRecord::Schema.define(version: 20160816074659) do
     t.string   "Message"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "salesforce_models", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
