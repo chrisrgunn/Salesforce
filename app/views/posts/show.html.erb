@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @post.id %>
+</p>
+
+<p>
+  <strong>Sfid:</strong>
+  <%= @post.SFID %>
+</p>
+
+<p>
+  <strong>Last change:</strong>
+  <%= @post.Last_Change %>
+</p>
+
+<p>
+  <strong>Modified at:</strong>
+  <%= @post.Modified_At %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @post.Message %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
