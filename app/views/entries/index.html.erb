@@ -1,13 +1,20 @@
+<style>
+table {
+    border-collapse: separate;
+    border-spacing: 15px 10px;
+}
+</style>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Entries</h1>
+<h1>Data Entries</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Emp</th>
-      <th>Sfid</th>
+      <th>ID</th>
+      <th>SFID </th>
       <th>Last change</th>
       <th>Modified at</th>
       <th>Message</th>
@@ -33,5 +40,5 @@
 </table>
 
 <br>
-
+<br><br><br><br><br>
 <%= link_to 'New Entry', new_entry_path %>
