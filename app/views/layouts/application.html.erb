@@ -1,7 +1,18 @@
 <!DOCTYPE html>
+
+<style>
+  div.tab{
+    display: inline-block;
+    padding: 5px;
+}
+</style>
 <html>
 <head>
   <title>Mypersonalize</title>
+  <div class="tab"><%= link_to 'Home', '/' %></div>
+  <div class="tab"><%= link_to 'Contacts', '/contacts' %></div>
+  <div class="tab"><%= link_to 'Entries (test)', '/entries' %></div>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +20,9 @@
 <body>
 
 <%= yield %>
+
+
+
 
 </body>
 </html>

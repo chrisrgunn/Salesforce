@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
 
   def index
     @page = (params[:page] || 1).to_i
-    @contacts = Contact.all
+    @contacts = Contact.order('id').all
   end
 
 end
