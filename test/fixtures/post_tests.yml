@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  _hc_lastop: MyString
+  sfid: MyString
+  createddate: MyString
+  isdeleted: false
+  name: MyString
+  systemmodstamp: 2016-08-17 17:28:46
+  _hc_err: MyText
+  accountid: MyString
+  email: MyString
+  firstname: MyString
+  acct_global_account_executive__c: MyString
+  lastnamelocal: MyString
+  firstnamelocal: MyString
+  phone: MyString
+  function__c: MyString
+  account_record_type__c: MyString
+  level__c: MyString
+  lastname: MyString
+  primary_functional_role__c: MyString
+  account_name_local__c: MyString
+  homephone: MyString
+
+two:
+  _hc_lastop: MyString
+  sfid: MyString
+  createddate: MyString
+  isdeleted: false
+  name: MyString
+  systemmodstamp: 2016-08-17 17:28:46
+  _hc_err: MyText
+  accountid: MyString
+  email: MyString
+  firstname: MyString
+  acct_global_account_executive__c: MyString
+  lastnamelocal: MyString
+  firstnamelocal: MyString
+  phone: MyString
+  function__c: MyString
+  account_record_type__c: MyString
+  level__c: MyString
+  lastname: MyString
+  primary_functional_role__c: MyString
+  account_name_local__c: MyString
+  homephone: MyString

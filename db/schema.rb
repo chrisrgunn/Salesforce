@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160817172846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,6 +151,32 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "Message"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "post_tests", force: :cascade do |t|
+    t.string   "_hc_lastop"
+    t.string   "sfid"
+    t.string   "createddate"
+    t.boolean  "isdeleted"
+    t.string   "name"
+    t.datetime "systemmodstamp"
+    t.text     "_hc_err"
+    t.string   "accountid"
+    t.string   "email"
+    t.string   "firstname"
+    t.string   "acct_global_account_executive__c"
+    t.string   "lastnamelocal"
+    t.string   "firstnamelocal"
+    t.string   "phone"
+    t.string   "function__c"
+    t.string   "account_record_type__c"
+    t.string   "level__c"
+    t.string   "lastname"
+    t.string   "primary_functional_role__c"
+    t.string   "account_name_local__c"
+    t.string   "homephone"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "posts", force: :cascade do |t|

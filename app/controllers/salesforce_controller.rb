@@ -7,5 +7,8 @@ class SalesforceController < ApplicationController
     #@contacts = Contact.order("lastname").offset(@page*20).limit(20).all()
     render :layout => false
   end
+  
+  def show
+  end
 
 end

@@ -25,11 +25,15 @@
          <td><%= contact.email %></td>
          <td><%= contact.createddate %></td>
          <td><%= contact.homephone %></td>
+         <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
        </tr>
        <% end %>
       </table>
 
       <%= link_to 'prev', {:page => @page-1} %> |
       <%= link_to 'next', {:page => @page+1} %>
+
   </div>
 </div>

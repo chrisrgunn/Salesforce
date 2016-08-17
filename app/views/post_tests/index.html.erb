@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Post Tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hc lastop</th>
+      <th>Sfid</th>
+      <th>Createddate</th>
+      <th>Isdeleted</th>
+      <th>Name</th>
+      <th>Systemmodstamp</th>
+      <th>Hc err</th>
+      <th>Accountid</th>
+      <th>Email</th>
+      <th>Firstname</th>
+      <th>Acct global account executive  c</th>
+      <th>Lastnamelocal</th>
+      <th>Firstnamelocal</th>
+      <th>Phone</th>
+      <th>Function  c</th>
+      <th>Account record type  c</th>
+      <th>Level  c</th>
+      <th>Lastname</th>
+      <th>Primary functional role  c</th>
+      <th>Account name local  c</th>
+      <th>Homephone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_tests.each do |post_test| %>
+      <tr>
+        <td><%= post_test._hc_lastop %></td>
+        <td><%= post_test.sfid %></td>
+        <td><%= post_test.createddate %></td>
+        <td><%= post_test.isdeleted %></td>
+        <td><%= post_test.name %></td>
+        <td><%= post_test.systemmodstamp %></td>
+        <td><%= post_test._hc_err %></td>
+        <td><%= post_test.accountid %></td>
+        <td><%= post_test.email %></td>
+        <td><%= post_test.firstname %></td>
+        <td><%= post_test.acct_global_account_executive__c %></td>
+        <td><%= post_test.lastnamelocal %></td>
+        <td><%= post_test.firstnamelocal %></td>
+        <td><%= post_test.phone %></td>
+        <td><%= post_test.function__c %></td>
+        <td><%= post_test.account_record_type__c %></td>
+        <td><%= post_test.level__c %></td>
+        <td><%= post_test.lastname %></td>
+        <td><%= post_test.primary_functional_role__c %></td>
+        <td><%= post_test.account_name_local__c %></td>
+        <td><%= post_test.homephone %></td>
+        <td><%= link_to 'Show', post_test %></td>
+        <td><%= link_to 'Edit', edit_post_test_path(post_test) %></td>
+        <td><%= link_to 'Destroy', post_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post test', new_post_test_path %>

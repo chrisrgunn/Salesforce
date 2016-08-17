@@ -1,0 +1,101 @@
+<%= form_for(@post_test) do |f| %>
+  <% if @post_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post_test.errors.count, "error") %> prohibited this post_test from being saved:</h2>
+
+      <ul>
+      <% @post_test.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :_hc_lastop %><br>
+    <%= f.text_field :_hc_lastop %>
+  </div>
+  <div class="field">
+    <%= f.label :sfid %><br>
+    <%= f.text_field :sfid %>
+  </div>
+  <div class="field">
+    <%= f.label :createddate %><br>
+    <%= f.text_field :createddate %>
+  </div>
+  <div class="field">
+    <%= f.label :isdeleted %><br>
+    <%= f.check_box :isdeleted %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :systemmodstamp %><br>
+    <%= f.datetime_select :systemmodstamp %>
+  </div>
+  <div class="field">
+    <%= f.label :_hc_err %><br>
+    <%= f.text_area :_hc_err %>
+  </div>
+  <div class="field">
+    <%= f.label :accountid %><br>
+    <%= f.text_field :accountid %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :acct_global_account_executive__c %><br>
+    <%= f.text_field :acct_global_account_executive__c %>
+  </div>
+  <div class="field">
+    <%= f.label :lastnamelocal %><br>
+    <%= f.text_field :lastnamelocal %>
+  </div>
+  <div class="field">
+    <%= f.label :firstnamelocal %><br>
+    <%= f.text_field :firstnamelocal %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :function__c %><br>
+    <%= f.text_field :function__c %>
+  </div>
+  <div class="field">
+    <%= f.label :account_record_type__c %><br>
+    <%= f.text_field :account_record_type__c %>
+  </div>
+  <div class="field">
+    <%= f.label :level__c %><br>
+    <%= f.text_field :level__c %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :primary_functional_role__c %><br>
+    <%= f.text_field :primary_functional_role__c %>
+  </div>
+  <div class="field">
+    <%= f.label :account_name_local__c %><br>
+    <%= f.text_field :account_name_local__c %>
+  </div>
+  <div class="field">
+    <%= f.label :homephone %><br>
+    <%= f.text_field :homephone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

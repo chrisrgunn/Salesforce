@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :post_tests
   resources :entries
   resources :contacts
   get 'welcome/index'

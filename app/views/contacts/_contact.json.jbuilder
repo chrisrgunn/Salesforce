@@ -1,0 +1,2 @@
+json.extract! contact, :id, :_hc_lastop, :sfid, :createddate, :isdeleted, :name, :systemmodstamp, :_hc_err, :accountid, :email, :firstname, :acct_global_account_executive__c, :lastnamelocal, :firstnamelocal, :phone, :function__c, :account_record_type__c, :level__c, :lastname, :primary_functional_role__c, :account_name_local__c, :homephone, :created_at, :updated_at
+json.url contact_url(contact, format: :json)
