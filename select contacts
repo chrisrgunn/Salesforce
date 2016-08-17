@@ -1,0 +1,16 @@
+                  List of relations
+   Schema   |         Name         | Type  |  Owner  
+------------+----------------------+-------+---------
+ salesforce | _hcmeta              | table | nitrous
+ salesforce | _sf_event_log        | table | nitrous
+ salesforce | _trigger_last_id     | table | nitrous
+ salesforce | _trigger_log         | table | nitrous
+ salesforce | _trigger_log_archive | table | nitrous
+ salesforce | account              | table | nitrous
+ salesforce | contact              | table | nitrous
+ salesforce | contacts             | table | nitrous
+ salesforce | entries              | table | nitrous
+ salesforce | salesforce_models    | table | nitrous
+ salesforce | schema_migrations    | table | nitrous
+(11 rows)
+

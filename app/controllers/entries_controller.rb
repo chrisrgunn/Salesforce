@@ -1,10 +1,18 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
+
+  def list
+
+  end
+
+
   # GET /entries
   # GET /entries.json
   def index
     @entries = Entry.all
+    #@contacts = Salesforce::Contact.all
+    #@contact = SELECT * FROM salesforce.contact WHERE sfid IS NULL AND _hc_lastop='FAILED';
   end
 
   # GET /entries/1
