@@ -1,0 +1,2 @@
+json.extract! account, :id, :accountteam__c, :_hc_lastop, :_hc_err, :account_md_d__c, :account_md_d_title__c, :phone, :isdeleted, :account_md_d_email__c, :account_md_d_name__c, :annualrevenue, :recordtypeid, :assets_reported_date__c, :accountmanager__c, :name, :account_manager__c, :systemmodstamp, :account_md_d_phone__c, :accountsitetype__c, :accountsource, :createddate, :website, :sfid, :created_at, :updated_at
+json.url account_url(account, format: :json)

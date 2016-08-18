@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818002909) do
+ActiveRecord::Schema.define(version: 20160818180340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,33 @@ ActiveRecord::Schema.define(version: 20160818002909) do
 
   add_index "account", ["sfid"], name: "hcu_idx_account_sfid", unique: true, using: :btree
   add_index "account", ["systemmodstamp"], name: "hc_idx_account_systemmodstamp", using: :btree
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "accountteam__c"
+    t.string   "_hc_lastop"
+    t.text     "_hc_err"
+    t.string   "account_md_d__c"
+    t.string   "account_md_d_title__c"
+    t.string   "phone"
+    t.boolean  "isdeleted"
+    t.string   "account_md_d_email__c"
+    t.string   "account_md_d_name__c"
+    t.float    "annualrevenue"
+    t.string   "recordtypeid"
+    t.date     "assets_reported_date__c"
+    t.string   "accountmanager__c"
+    t.string   "name"
+    t.string   "account_manager__c"
+    t.datetime "systemmodstamp"
+    t.string   "account_md_d_phone__c"
+    t.string   "accountsitetype__c"
+    t.string   "accountsource"
+    t.datetime "createddate"
+    t.string   "website"
+    t.string   "sfid"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "contact", force: :cascade do |t|
     t.string   "_hc_lastop",                       limit: 32

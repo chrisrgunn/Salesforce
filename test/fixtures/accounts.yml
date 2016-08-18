@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accountteam__c: MyString
+  _hc_lastop: MyString
+  _hc_err: MyText
+  account_md_d__c: MyString
+  account_md_d_title__c: MyString
+  phone: MyString
+  isdeleted: false
+  account_md_d_email__c: MyString
+  account_md_d_name__c: MyString
+  annualrevenue: 1.5
+  recordtypeid: MyString
+  assets_reported_date__c: 2016-08-18
+  accountmanager__c: MyString
+  name: MyString
+  account_manager__c: MyString
+  systemmodstamp: 2016-08-18 18:03:40
+  account_md_d_phone__c: MyString
+  accountsitetype__c: MyString
+  accountsource: MyString
+  createddate: 2016-08-18 18:03:40
+  website: MyString
+  sfid: MyString
+
+two:
+  accountteam__c: MyString
+  _hc_lastop: MyString
+  _hc_err: MyText
+  account_md_d__c: MyString
+  account_md_d_title__c: MyString
+  phone: MyString
+  isdeleted: false
+  account_md_d_email__c: MyString
+  account_md_d_name__c: MyString
+  annualrevenue: 1.5
+  recordtypeid: MyString
+  assets_reported_date__c: 2016-08-18
+  accountmanager__c: MyString
+  name: MyString
+  account_manager__c: MyString
+  systemmodstamp: 2016-08-18 18:03:40
+  account_md_d_phone__c: MyString
+  accountsitetype__c: MyString
+  accountsource: MyString
+  createddate: 2016-08-18 18:03:40
+  website: MyString
+  sfid: MyString

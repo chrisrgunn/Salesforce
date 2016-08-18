@@ -12,90 +12,89 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :_hc_lastop %><br>
-    <%= f.text_field :_hc_lastop %>
-  </div>
-  <div class="field">
-    <%= f.label :sfid %><br>
-    <%= f.text_field :sfid %>
-  </div>
-  <div class="field">
-    <%= f.label :createddate %><br>
-    <%= f.text_field :createddate %>
-  </div>
-  <div class="field">
-    <%= f.label :isdeleted %><br>
-    <%= f.check_box :isdeleted %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
+    <%= 'Name' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :systemmodstamp %><br>
-    <%= f.datetime_select :systemmodstamp %>
-  </div>
-  <div class="field">
-    <%= f.label :_hc_err %><br>
-    <%= f.text_area :_hc_err %>
-  </div>
-  <div class="field">
-    <%= f.label :accountid %><br>
-    <%= f.text_field :accountid %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :firstname %><br>
+    <%= 'First Name' %><br>
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= f.label :acct_global_account_executive__c %><br>
-    <%= f.text_field :acct_global_account_executive__c %>
-  </div>
-  <div class="field">
-    <%= f.label :lastnamelocal %><br>
-    <%= f.text_field :lastnamelocal %>
-  </div>
-  <div class="field">
-    <%= f.label :firstnamelocal %><br>
-    <%= f.text_field :firstnamelocal %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :function__c %><br>
-    <%= f.text_field :function__c %>
-  </div>
-  <div class="field">
-    <%= f.label :account_record_type__c %><br>
-    <%= f.text_field :account_record_type__c %>
-  </div>
-  <div class="field">
-    <%= f.label :level__c %><br>
-    <%= f.text_field :level__c %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br>
+    <%= 'Last Name' %><br>
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label :primary_functional_role__c %><br>
-    <%= f.text_field :primary_functional_role__c %>
+    <%= 'Account ID' %><br>
+    <%= f.text_field :accountid %>
   </div>
   <div class="field">
-    <%= f.label :account_name_local__c %><br>
-    <%= f.text_field :account_name_local__c %>
+    <%=  'SFID' %><br>
+    <%= f.text_field :sfid %>
   </div>
   <div class="field">
-    <%= f.label :homephone %><br>
+    <%= 'Date Created' %><br>
+    <%= f.text_field :createddate %>
+  </div>
+  <div class="field">
+    <%=  'Account Record Type' %><br>
+    <%= f.text_field :account_record_type__c %>
+  </div>
+  <div class="field">
+    <%=  'Email' %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%=  'Primary Phone' %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%=  'Home Phone' %><br>
     <%= f.text_field :homephone %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%# Not Used Below %>
+    <%#= f.label :_hc_err %>
+    <%#= f.text_area :_hc_err %>
+    <%#= f.label :primary_functional_role__c %>
+    <%#= f.text_field :primary_functional_role__c %>
+    <%#= f.label :account_name_local__c %>
+    <%#= f.text_field :account_name_local__c %>
+    <%#= f.label :lastnamelocal %>
+    <%#= f.text_field :lastnamelocal %>
+    <%#= f.label :firstnamelocal %>
+    <%#= f.text_field :firstnamelocal %>
+    <%#= f.label :_hc_lastop %>
+    <%#= f.text_field :_hc_lastop %>
+    <%#= f.label :isdeleted %>
+    <%#= f.check_box :isdeleted %>
+    <%#= f.label :systemmodstamp %>
+    <%#= f.datetime_select :systemmodstamp %>
+    <%#= f.label :level__c %>
+    <%#= f.text_field :level__c %>
+    <%#= f.label :function__c %>
+    <%#= f.text_field :function__c %>
+    <%#= f.label :acct_global_account_executive__c %>
+    <%#= f.text_field :acct_global_account_executive__c %>
+
 <% end %>

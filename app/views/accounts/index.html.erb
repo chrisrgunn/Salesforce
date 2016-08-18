@@ -1,0 +1,54 @@
+<style>
+  table{
+      border-collapse: separate;
+    border-spacing: 10px 5px;
+  }
+</style>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account Team</th>
+      <th>Account Title</th>
+      <th>Phone</th>
+      <th>Account Email</th>
+      <th>Account Name</th>
+      <th>Annual Revenue</th>
+      <th>Name</th>
+      <th>Account Phone</th>
+      <th>Account Site Type</th>
+      <th>Created Date</th>
+      <th>Website</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.accountteam__c %></td>
+        <td><%= account.account_md_d_title__c %></td>
+        <td><%= account.phone %></td>
+        <td><%= account.account_md_d_email__c %></td>
+        <td><%= account.account_md_d_name__c %></td>
+        <td><%= account.annualrevenue %></td>
+        <td><%= account.name %></td>
+        <td><%= account.account_md_d_phone__c %></td>
+        <td><%= account.accountsitetype__c %></td>
+        <td><%= account.createddate %></td>
+        <td><%= account.website %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account', new_account_path %>

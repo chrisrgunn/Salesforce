@@ -1,0 +1,105 @@
+<%= form_for(@account) do |f| %>
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% @account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :accountteam__c %><br>
+    <%= f.text_field :accountteam__c %>
+  </div>
+  <div class="field">
+    <%= f.label :_hc_lastop %><br>
+    <%= f.text_field :_hc_lastop %>
+  </div>
+  <div class="field">
+    <%= f.label :_hc_err %><br>
+    <%= f.text_area :_hc_err %>
+  </div>
+  <div class="field">
+    <%= f.label :account_md_d__c %><br>
+    <%= f.text_field :account_md_d__c %>
+  </div>
+  <div class="field">
+    <%= f.label :account_md_d_title__c %><br>
+    <%= f.text_field :account_md_d_title__c %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :isdeleted %><br>
+    <%= f.check_box :isdeleted %>
+  </div>
+  <div class="field">
+    <%= f.label :account_md_d_email__c %><br>
+    <%= f.text_field :account_md_d_email__c %>
+  </div>
+  <div class="field">
+    <%= f.label :account_md_d_name__c %><br>
+    <%= f.text_field :account_md_d_name__c %>
+  </div>
+  <div class="field">
+    <%= f.label :annualrevenue %><br>
+    <%= f.text_field :annualrevenue %>
+  </div>
+  <div class="field">
+    <%= f.label :recordtypeid %><br>
+    <%= f.text_field :recordtypeid %>
+  </div>
+  <div class="field">
+    <%= f.label :assets_reported_date__c %><br>
+    <%= f.date_select :assets_reported_date__c %>
+  </div>
+  <div class="field">
+    <%= f.label :accountmanager__c %><br>
+    <%= f.text_field :accountmanager__c %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :account_manager__c %><br>
+    <%= f.text_field :account_manager__c %>
+  </div>
+  <div class="field">
+    <%= f.label :systemmodstamp %><br>
+    <%= f.datetime_select :systemmodstamp %>
+  </div>
+  <div class="field">
+    <%= f.label :account_md_d_phone__c %><br>
+    <%= f.text_field :account_md_d_phone__c %>
+  </div>
+  <div class="field">
+    <%= f.label :accountsitetype__c %><br>
+    <%= f.text_field :accountsitetype__c %>
+  </div>
+  <div class="field">
+    <%= f.label :accountsource %><br>
+    <%= f.text_field :accountsource %>
+  </div>
+  <div class="field">
+    <%= f.label :createddate %><br>
+    <%= f.datetime_select :createddate %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :sfid %><br>
+    <%= f.text_field :sfid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
