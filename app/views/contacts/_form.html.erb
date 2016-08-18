@@ -26,6 +26,7 @@
   <div class="field">
     <%= 'Account ID' %><br>
     <%= f.select :accountid, Account.all.collect {|x| [x.name,x.id]}, {:include_blank => 'Select One'} %>
+    <%= f.hidden_field :accountid, value: '00122000003WhJ7AAK' %>
     <%#= f.text_field :accountid %>
   </div>
 <div class="field">
