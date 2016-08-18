@@ -25,20 +25,12 @@
   </div>
   <div class="field">
     <%= 'Account ID' %><br>
-    <%= f.text_field :accountid %>
+    <%= f.select :accountid, Account.all.collect {|x| [x.name,x.id]}, {:include_blank => 'Select One'} %>
+    <%#= f.text_field :accountid %>
   </div>
-  <div class="field">
-    <%=  'SFID' %><br>
-    <%= f.text_field :sfid %>
-  </div>
-  <div class="field">
-    <%= 'Date Created' %><br>
-    <%= f.text_field :createddate %>
-  </div>
-  <div class="field">
-    <%=  'Account Record Type' %><br>
-    <%= f.text_field :account_record_type__c %>
-  </div>
+
+
+
   <div class="field">
     <%=  'Email' %><br>
     <%= f.text_field :email %>
@@ -96,5 +88,12 @@
     <%#= f.text_field :function__c %>
     <%#= f.label :acct_global_account_executive__c %>
     <%#= f.text_field :acct_global_account_executive__c %>
+    <%#=  'SFID' %><br>
+    <%#= f.text_field :sfid %>
+    <%#= 'Date Created' %><br>
+    <%#= f.text_field :createddate %>
+    <%#=  'Account Record Type' %><br>
+    <%#= f.text_field :account_record_type__c %>
+
 
 <% end %>
