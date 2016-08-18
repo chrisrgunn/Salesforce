@@ -1,0 +1,2 @@
+json.extract! opportunity, :id, :proposalduedate__c, :systemmodstamp, :accountid, :currencyisocode, :stagename, :isdeleted, :closedate, :opportunity_md_d__c, :leadsource, :_hc_lastop, :primary_key_buyer__c, :probability, :amount, :_hc_err, :type, :sfid, :natureofwork__c, :pursuitteam__c, :createddate, :name, :created_at, :updated_at
+json.url opportunity_url(opportunity, format: :json)

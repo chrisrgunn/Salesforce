@@ -31,9 +31,12 @@
        </tr>
        <% end %>
       </table>
-
+<br>
       <%= link_to 'prev', {:page => @page-1} %> |
       <%= link_to 'next', {:page => @page+1} %>
+
+      <h3><%= link_to 'New Contact', new_contact_path %><h3>
+
 
   </div>
 </div>

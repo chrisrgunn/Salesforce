@@ -1,0 +1,97 @@
+<%= form_for(@opportunity) do |f| %>
+  <% if @opportunity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opportunity.errors.count, "error") %> prohibited this opportunity from being saved:</h2>
+
+      <ul>
+      <% @opportunity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :proposalduedate__c %><br>
+    <%= f.date_select :proposalduedate__c %>
+  </div>
+  <div class="field">
+    <%= f.label :systemmodstamp %><br>
+    <%= f.datetime_select :systemmodstamp %>
+  </div>
+  <div class="field">
+    <%= f.label :accountid %><br>
+    <%= f.text_field :accountid %>
+  </div>
+  <div class="field">
+    <%= f.label :currencyisocode %><br>
+    <%= f.text_field :currencyisocode %>
+  </div>
+  <div class="field">
+    <%= f.label :stagename %><br>
+    <%= f.text_field :stagename %>
+  </div>
+  <div class="field">
+    <%= f.label :isdeleted %><br>
+    <%= f.check_box :isdeleted %>
+  </div>
+  <div class="field">
+    <%= f.label :closedate %><br>
+    <%= f.date_select :closedate %>
+  </div>
+  <div class="field">
+    <%= f.label :opportunity_md_d__c %><br>
+    <%= f.text_field :opportunity_md_d__c %>
+  </div>
+  <div class="field">
+    <%= f.label :leadsource %><br>
+    <%= f.text_field :leadsource %>
+  </div>
+  <div class="field">
+    <%= f.label :_hc_lastop %><br>
+    <%= f.text_field :_hc_lastop %>
+  </div>
+  <div class="field">
+    <%= f.label :primary_key_buyer__c %><br>
+    <%= f.text_field :primary_key_buyer__c %>
+  </div>
+  <div class="field">
+    <%= f.label :probability %><br>
+    <%= f.text_field :probability %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :_hc_err %><br>
+    <%= f.text_area :_hc_err %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :sfid %><br>
+    <%= f.text_field :sfid %>
+  </div>
+  <div class="field">
+    <%= f.label :natureofwork__c %><br>
+    <%= f.text_field :natureofwork__c %>
+  </div>
+  <div class="field">
+    <%= f.label :pursuitteam__c %><br>
+    <%= f.text_field :pursuitteam__c %>
+  </div>
+  <div class="field">
+    <%= f.label :createddate %><br>
+    <%= f.datetime_select :createddate %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

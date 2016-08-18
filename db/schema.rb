@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817172846) do
+ActiveRecord::Schema.define(version: 20160818002909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,6 +152,96 @@ ActiveRecord::Schema.define(version: 20160817172846) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "era__c", force: :cascade do |t|
+    t.string   "name",           limit: 80
+    t.text     "_hc_err"
+    t.datetime "createddate"
+    t.string   "sfid",           limit: 18
+    t.boolean  "isdeleted"
+    t.datetime "systemmodstamp"
+    t.string   "_hc_lastop",     limit: 32
+  end
+
+  add_index "era__c", ["sfid"], name: "hcu_idx_era__c_sfid", unique: true, using: :btree
+  add_index "era__c", ["systemmodstamp"], name: "hc_idx_era__c_systemmodstamp", using: :btree
+
+  create_table "lead", force: :cascade do |t|
+    t.datetime "createddate"
+    t.string   "_hc_lastop",     limit: 32
+    t.string   "sfid",           limit: 18
+    t.string   "name",           limit: 121
+    t.text     "_hc_err"
+    t.datetime "systemmodstamp"
+    t.boolean  "isdeleted"
+  end
+
+  add_index "lead", ["sfid"], name: "hcu_idx_lead_sfid", unique: true, using: :btree
+  add_index "lead", ["systemmodstamp"], name: "hc_idx_lead_systemmodstamp", using: :btree
+
+  create_table "opportunities", force: :cascade do |t|
+    t.date     "proposalduedate__c"
+    t.datetime "systemmodstamp"
+    t.string   "accountid"
+    t.string   "currencyisocode"
+    t.string   "stagename"
+    t.boolean  "isdeleted"
+    t.date     "closedate"
+    t.string   "opportunity_md_d__c"
+    t.string   "leadsource"
+    t.string   "_hc_lastop"
+    t.string   "primary_key_buyer__c"
+    t.float    "probability"
+    t.float    "amount"
+    t.text     "_hc_err"
+    t.string   "type"
+    t.string   "sfid"
+    t.string   "natureofwork__c"
+    t.string   "pursuitteam__c"
+    t.datetime "createddate"
+    t.string   "name"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "opportunity", force: :cascade do |t|
+    t.date     "proposalduedate__c"
+    t.datetime "systemmodstamp"
+    t.string   "accountid",            limit: 18
+    t.string   "currencyisocode",      limit: 3
+    t.string   "stagename",            limit: 40
+    t.boolean  "isdeleted"
+    t.date     "closedate"
+    t.string   "opportunity_md_d__c",  limit: 18
+    t.string   "leadsource",           limit: 40
+    t.string   "_hc_lastop",           limit: 32
+    t.string   "primary_key_buyer__c", limit: 18
+    t.float    "probability"
+    t.float    "amount"
+    t.text     "_hc_err"
+    t.string   "type",                 limit: 40
+    t.string   "sfid",                 limit: 18
+    t.string   "natureofwork__c",      limit: 255
+    t.string   "pursuitteam__c",       limit: 255
+    t.datetime "createddate"
+    t.string   "name",                 limit: 120
+  end
+
+  add_index "opportunity", ["sfid"], name: "hcu_idx_opportunity_sfid", unique: true, using: :btree
+  add_index "opportunity", ["systemmodstamp"], name: "hc_idx_opportunity_systemmodstamp", using: :btree
+
+  create_table "opportunitylineitem", force: :cascade do |t|
+    t.string   "name",           limit: 376
+    t.text     "_hc_err"
+    t.string   "sfid",           limit: 18
+    t.datetime "createddate"
+    t.boolean  "isdeleted"
+    t.datetime "systemmodstamp"
+    t.string   "_hc_lastop",     limit: 32
+  end
+
+  add_index "opportunitylineitem", ["sfid"], name: "hcu_idx_opportunitylineitem_sfid", unique: true, using: :btree
+  add_index "opportunitylineitem", ["systemmodstamp"], name: "hc_idx_opportunitylineitem_systemmodstamp", using: :btree
 
   create_table "post_tests", force: :cascade do |t|
     t.string   "_hc_lastop"

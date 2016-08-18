@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  proposalduedate__c: 2016-08-18
+  systemmodstamp: 2016-08-18 00:29:09
+  accountid: MyString
+  currencyisocode: MyString
+  stagename: MyString
+  isdeleted: false
+  closedate: 2016-08-18
+  opportunity_md_d__c: MyString
+  leadsource: MyString
+  _hc_lastop: MyString
+  primary_key_buyer__c: MyString
+  probability: 1.5
+  amount: 1.5
+  _hc_err: MyText
+  type: 
+  sfid: MyString
+  natureofwork__c: MyString
+  pursuitteam__c: MyString
+  createddate: 2016-08-18 00:29:09
+  name: MyString
+
+two:
+  proposalduedate__c: 2016-08-18
+  systemmodstamp: 2016-08-18 00:29:09
+  accountid: MyString
+  currencyisocode: MyString
+  stagename: MyString
+  isdeleted: false
+  closedate: 2016-08-18
+  opportunity_md_d__c: MyString
+  leadsource: MyString
+  _hc_lastop: MyString
+  primary_key_buyer__c: MyString
+  probability: 1.5
+  amount: 1.5
+  _hc_err: MyText
+  type: 
+  sfid: MyString
+  natureofwork__c: MyString
+  pursuitteam__c: MyString
+  createddate: 2016-08-18 00:29:09
+  name: MyString

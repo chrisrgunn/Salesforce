@@ -8,6 +8,11 @@ class SalesforceController < ApplicationController
     render :layout => false
   end
   
+  def opportunities
+    @opportunities = Salesforce::Opportunity.all
+    render :layout => false
+  end
+  
   def show
   end
 

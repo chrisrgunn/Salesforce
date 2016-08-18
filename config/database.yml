@@ -23,9 +23,14 @@ default: &default
 
 development:
   <<: *default
-  database: mylocaldb2
-  #host: localhost
+  database: dav3r9jp3r26hv
+  username: mfykicvwpdzyrw
+  password: dGFXqd4KmcLwQQG036vBDCVlxX
+  host: ec2-54-243-201-19.compute-1.amazonaws.com
+  sslmode: require
   schema_search_path: "salesforce,public"
+  #host: localhost
+  #schema_search_path: "salesforce,public"
   #database: postgresql-graceful-13317
 
   # The specified database role being used to connect to postgres.
@@ -60,7 +65,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: mylocaldb2
+  database: dav3r9jp3r26hv
+  username: mfykicvwpdzyrw
+  password: dGFXqd4KmcLwQQG036vBDCVlxX
+  host: ec2-54-243-201-19.compute-1.amazonaws.com
+  sslmode: require
   schema_search_path: "salesforce,public"
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -84,7 +93,9 @@ test:
 #
 production:
   <<: *default
-  database: postgresql-graceful-13317
+  database: dav3r9jp3r26hv
   username: mfykicvwpdzyrw
-  password: <%= ENV['dGFXqd4KmcLwQQG036vBDCVlxX'] %>
+  password: dGFXqd4KmcLwQQG036vBDCVlxX
+  host: ec2-54-243-201-19.compute-1.amazonaws.com
+  sslmode: require
   schema_search_path: "salesforce,public"

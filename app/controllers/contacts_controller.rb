@@ -31,8 +31,8 @@ class ContactsController < ApplicationController
   def edit
   end
 
-  # POST /contacts
-  # POST /contacts.json
+  # CONTACT /contacts
+  # CONTACT /contacts.json
   def create
     @contact = Contact.new(contact_params)
 
@@ -47,11 +47,11 @@ class ContactsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /post_tests/1
-  # PATCH/PUT /post_tests/1.json
+  # PATCH/PUT /contacts/1
+  # PATCH/PUT /contacts/1.json
   def update
     respond_to do |format|
-      if @contact.update(post_test_params)
+      if @contact.update(contact_params)
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
         format.json { render :show, status: :ok, location: @contact }
       else
@@ -61,12 +61,12 @@ class ContactsController < ApplicationController
     end
   end
 
-  # DELETE /post_tests/1
-  # DELETE /post_tests/1.json
+  # DELETE /contacts/1
+  # DELETE /contacts/1.json
   def destroy
     @contact.destroy
     respond_to do |format|
-      format.html { redirect_to post_tests_url, notice: 'Contact was successfully destroyed.' }
+      format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -79,6 +79,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:post_test).permit(:_hc_lastop, :sfid, :createddate, :isdeleted, :name, :systemmodstamp, :_hc_err, :accountid, :email, :firstname, :acct_global_account_executive__c, :lastnamelocal, :firstnamelocal, :phone, :function__c, :account_record_type__c, :level__c, :lastname, :primary_functional_role__c, :account_name_local__c, :homephone)
+      params.require(:contact).permit(:_hc_lastop, :sfid, :createddate, :isdeleted, :name, :systemmodstamp, :_hc_err, :accountid, :email, :firstname, :acct_global_account_executive__c, :lastnamelocal, :firstnamelocal, :phone, :function__c, :account_record_type__c, :level__c, :lastname, :primary_functional_role__c, :account_name_local__c, :homephone)
     end
 end
