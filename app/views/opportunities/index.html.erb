@@ -1,3 +1,10 @@
+<style>
+  table{
+      border-collapse: separate;
+    border-spacing: 10px 5px;
+  }
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Opportunities</h1>
@@ -5,53 +12,34 @@
 <table>
   <thead>
     <tr>
-      <th>Proposalduedate  c</th>
-      <th>Systemmodstamp</th>
-      <th>Accountid</th>
-      <th>Currencyisocode</th>
-      <th>Stagename</th>
-      <th>Isdeleted</th>
-      <th>Closedate</th>
-      <th>Opportunity md d  c</th>
-      <th>Leadsource</th>
-      <th>Hc lastop</th>
-      <th>Primary key buyer  c</th>
-      <th>Probability</th>
-      <th>Amount</th>
-      <th>Hc err</th>
-      <th>Type</th>
-      <th>Sfid</th>
-      <th>Natureofwork  c</th>
-      <th>Pursuitteam  c</th>
-      <th>Createddate</th>
+
       <th>Name</th>
-      <th colspan="3"></th>
+      <th>Lead Source</th>
+      <th>Amount</th>
+      <th>Type</th>
+      <th>Stage Name</th>
+      <th>Pursuit Team</th>
+      <th>Close Date</th>
+      <th>Proposal Due Date</th>
+      <th>Probability</th>
+      <th>Nature of Work</th>
     </tr>
   </thead>
 
   <tbody>
     <% @opportunities.each do |opportunity| %>
       <tr>
-        <td><%= opportunity.proposalduedate__c %></td>
-        <td><%= opportunity.systemmodstamp %></td>
-        <td><%= opportunity.accountid %></td>
-        <td><%= opportunity.currencyisocode %></td>
-        <td><%= opportunity.stagename %></td>
-        <td><%= opportunity.isdeleted %></td>
-        <td><%= opportunity.closedate %></td>
-        <td><%= opportunity.opportunity_md_d__c %></td>
-        <td><%= opportunity.leadsource %></td>
-        <td><%= opportunity._hc_lastop %></td>
-        <td><%= opportunity.primary_key_buyer__c %></td>
-        <td><%= opportunity.probability %></td>
-        <td><%= opportunity.amount %></td>
-        <td><%= opportunity._hc_err %></td>
-        <td><%= opportunity.type %></td>
-        <td><%= opportunity.sfid %></td>
-        <td><%= opportunity.natureofwork__c %></td>
-        <td><%= opportunity.pursuitteam__c %></td>
-        <td><%= opportunity.createddate %></td>
         <td><%= opportunity.name %></td>
+        <td><%= opportunity.leadsource %></td>
+        <td><%= opportunity.amount %></td>
+        <td><%= opportunity.type %></td>
+        <td><%= opportunity.stagename %></td>
+        <td><%= opportunity.pursuitteam__c %></td>
+        <td><%= opportunity.closedate %></td>
+        <td><%= opportunity.proposalduedate__c %></td>
+        <td><%= opportunity.probability %></td>
+        <td><%= opportunity.natureofwork__c %></td>
+
         <td><%= link_to 'Show', opportunity %></td>
         <td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
         <td><%= link_to 'Destroy', opportunity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
