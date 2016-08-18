@@ -105,5 +105,11 @@
   <%= @contact.homephone %>
 </p>
 
+<p>
+  <strong>Lead Source:</strong>
+  <%= @contact.leadsource %>
+</p>
+
+
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>

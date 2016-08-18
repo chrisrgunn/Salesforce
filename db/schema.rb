@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(version: 20160818180340) do
     t.string   "primary_functional_role__c",       limit: 255
     t.string   "account_name_local__c",            limit: 18
     t.string   "homephone",                        limit: 40
+    t.string   "leadsource",                       limit: 40
   end
 
   add_index "contact", ["sfid"], name: "hcu_idx_contact_sfid", unique: true, using: :btree

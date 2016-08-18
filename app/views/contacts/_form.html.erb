@@ -28,8 +28,14 @@
     <%= f.select :accountid, Account.all.collect {|x| [x.name,x.id]}, {:include_blank => 'Select One'} %>
     <%#= f.text_field :accountid %>
   </div>
-
-
+<div class="field">
+  <%= 'Primary Functional Role'%><br>
+  <%= f.text_field :primary_functional_role__c %>
+</div>
+<div class="field">
+  <%= 'Lead Source'%><br>
+  <%= f.text_field :leadsource %>
+</div>
 
   <div class="field">
     <%=  'Email' %><br>
@@ -69,7 +75,6 @@
     <%#= f.label :_hc_err %>
     <%#= f.text_area :_hc_err %>
     <%#= f.label :primary_functional_role__c %>
-    <%#= f.text_field :primary_functional_role__c %>
     <%#= f.label :account_name_local__c %>
     <%#= f.text_field :account_name_local__c %>
     <%#= f.label :lastnamelocal %>
@@ -90,9 +95,9 @@
     <%#= f.text_field :acct_global_account_executive__c %>
     <%#=  'SFID' %><br>
     <%#= f.text_field :sfid %>
-    <%#= 'Date Created' %><br>
+    <%#= 'Date Created' %>
     <%#= f.text_field :createddate %>
-    <%#=  'Account Record Type' %><br>
+    <%#=  'Account Record Type' %>
     <%#= f.text_field :account_record_type__c %>
 
 

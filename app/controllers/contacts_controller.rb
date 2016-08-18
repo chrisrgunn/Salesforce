@@ -80,6 +80,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:_hc_lastop, :sfid, :createddate, :isdeleted, :name, :systemmodstamp, :_hc_err, :accountid, :email, :firstname, :acct_global_account_executive__c, :lastnamelocal, :firstnamelocal, :phone, :function__c, :account_record_type__c, :level__c, :lastname, :primary_functional_role__c, :account_name_local__c, :homephone)
+      params.require(:contact).permit(:_hc_lastop, :sfid, :createddate, :isdeleted, :name, :systemmodstamp, :_hc_err, :accountid, :email, :firstname, :acct_global_account_executive__c, :lastnamelocal, :firstnamelocal, :phone, :function__c, :account_record_type__c, :level__c, :lastname, :primary_functional_role__c, :account_name_local__c, :homephone, :leadsource)
     end
 end
